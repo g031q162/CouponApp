@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>クーポン一覧</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>クーポン一覧</h1>
+    <div>
+      <table border="1">
+        <thead>
+          <tr>
+            <th>クーポン名</th>
+            <th>枚数</th>
+            <th>期限</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+      <h2>クーポン追加</h2>
+      <form action="./routes/coupon/period" method="post">
+        <div>
+            <label>クーポン名：</label>
+            <input type="text" name="coupon_name"/>
+            <label>所持枚数：</label>
+            <input type="password" name="number"/>
+            <label>期限：</label>
+            <input type="password" name="expire_date"/>
+            <input type="submit" value="追加"/>
+    </div>
+    <div class="sample">
+    <p><%= user.username %>でログイン中</p>
+    <p>現在の日付は<%= year %>/<%= month %>/<%= date %></p>
+      <input type="button" onclick="location.href='/logout'" value="ログアウト"/>
+      <input type="button" onclick="location.href='./users/delete'" value="ユーザの削除"/>
+    </div>
+  </body>
+</html>
