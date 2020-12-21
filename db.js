@@ -12,11 +12,11 @@ const connection = typeorm.createConnection({
     synchronize: false,
     entities: [
         new EntitySchema(require('./entity/user')),
-        require('./entity/available_store'),
-        require('./entity/coupon'),
-        require('./entity/period'),
-        require('./entity/store'),
-        require('./entity/user_test')
+        new EntitySchema(require('./entity/available_store')),
+        new EntitySchema(require('./entity/coupon')),
+        new EntitySchema(require('./entity/period')),
+        new EntitySchema(require('./entity/store')),
+        new EntitySchema(require('./entity/user_test'))
     ],
 });
 module.exports = connection;

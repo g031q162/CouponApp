@@ -4,24 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ログイン</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 <body>
-    <h1>ログイン</h1>
+    <h1 style="text-align: center;font-size: 40px;">クーポン管理アプリ</h1>
+    <div><%= error %></div>
+    <div id="login">
     <form action="/login" method="post">
-        <div>
-            <label>ユーザー名：</label>
-            <input type="text" name="username"/>
-        </div>
-        <div>
-            <label>パスワード：</label>
-            <input type="password" name="password"/>
-        </div>
-        <div>
-            <input type="button" onclick="location.href='./users/create'" value="新規登録"/>
-            <input type="submit" value="ログイン" style="position: relative; left: 110px; top: 0px;"/>
-        </div>
-        <div><%= error %></div>
+            <p class="form-title">ログイン</p>
+            <p><label>ユーザー名：</label></p>
+            <p class="user"><input type="text" size="55" name="username"　placeholder="ユーザ名"/></p>
+            <p><label>パスワード：</label></p>
+            <p class="pass"><input type="password" size="55" name="password"　placeholder="パスワード"/></p>
+            <p class="submit"><input type="submit" style="font-size: 20px;" value="ログイン"/></p>
     </form>
-    <a href="./users/update">パスワードを忘れた方はこちら</a>
+    <br><a href="./users/update">パスワードを忘れた方はこちら</a>
+</div>
+<div id="but">
+    <a href="./users/create">アカウント作成</a>
+    </div>
 </body>
 </html>

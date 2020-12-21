@@ -6,39 +6,66 @@
   </head>
   <body>
     <h1>クーポン一覧</h1>
-    <div>
-      <table border="1">
+    <div id="sample1">
+      <table>
         <thead>
           <tr>
             <th>クーポン名</th>
             <th>枚数</th>
             <th>期限</th>
+            <th>使用枚数</th>
           </tr>
         </thead>
         <tbody>
+        <% if (data.length !== 0) { %>   
+        <tbody>
+          <% for (var i = 0; i < data.length; i++){ %>
           <tr>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td><form name="form1" action="/coupon" method="post">
+              <input type="hidden" name="coupon_name" value=<%= data2[i].coupon_name %>>
+              <button class="link-style-btn" style="font-size: 20px;" type="submit" value="<%= data2[i].coupon_name %>"><%= data2[i].coupon_name %></button>
+            </form>
+            </td>
+            <td><%= data[i].number %></td>
+            <td><%= data[i].expire_date %></td>
+            <td><form name="form2" action="/used" method="post">
+              <input type="hidden" name="period_id" value=<%= data[i].period_id %>>
+              <input type="text" size="5" name="used_number"/><label>枚</label>
+              <button type="submit" value="used">使用</button>
+            </form></td>
           </tr>
+          <% } %>
         </tbody>
+          <% } else { %>
+            <tbody>
+        <tr>
+          <td colspan="4">登録されたクーポンがありません。</td>
+      </tr>
+    </tbody>
+        <% } %>
       </table>
-      <h2>クーポン追加</h2>
-      <form action="./routes/coupon/period" method="post">
+      </div><br>
+      <br><h1>クーポン追加</h1>
+      <form action="" method="post">
+        <dl class="align">
         <div>
-            <label>クーポン名：</label>
-            <input type="text" name="coupon_name"/>
-            <label>所持枚数：</label>
-            <input type="password" name="number"/>
-            <label>期限：</label>
-            <input type="password" name="expire_date"/>
-            <input type="submit" value="追加"/>
+            <dt><label>クーポン名：</label></dt>
+            <dd><input type="text" name="coupon_name"/></dd>
+            <dt><label>所持枚数：</label></dt>
+            <dd><input type="number" name="number"/></dd>
+            <dt><label>期限：</label></dt>
+            <dd><input type="date" name="expire_date"/></dd>
+            <br><input type="submit" style="font-size: 15px;position: relative; left: 280px; top: 0px;" value="追加"/>
     </div>
+  </dl>
+  </form>
     <div class="sample">
     <p><%= user.username %>でログイン中</p>
-    <p>現在の日付は<%= year %>/<%= month %>/<%= date %></p>
-      <input type="button" onclick="location.href='/logout'" value="ログアウト"/>
-      <input type="button" onclick="location.href='./users/delete'" value="ユーザの削除"/>
+    <p>現在の日付は<%= year %>/<%= month %>/<%= day %></p>
+    </div>
+    <div class="sample2">
+      <input type="button" style="font-size: 15px;" onclick="location.href='/logout'" value="ログアウト"/><br /><br />
+      <input type="button" style="font-size: 15px;" onclick="location.href='./users/delete'" value="ユーザの削除"/>
     </div>
   </body>
 </html>

@@ -8,6 +8,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var fizzbuzzRouter = require('./routes/fizzbuzz')
 var loginRouter = require('./routes/login')
+var couponRouter = require('./routes/coupon')
 
 var app = express();
 
@@ -86,6 +87,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/fizzbuzz', fizzbuzzRouter)
 app.use('/login', loginRouter);
+app.use('/coupon', couponRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -1,7 +1,7 @@
 module.exports = {
     name: 'available_stores',
     columns: {
-        user_id: {
+        as_id: {
             primary: true,
             type: 'int',
             generated: true,
@@ -10,7 +10,7 @@ module.exports = {
             type: 'int',
         },
         store_id: {
-            type: 'int'
+            type: 'int',
         },
     },
 };

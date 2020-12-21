@@ -13,7 +13,7 @@ module.exports = {
         info: {
             type: 'varchar',
         },
-        address: {
+        adress: {
             type: 'varchar',
         },
         location: {

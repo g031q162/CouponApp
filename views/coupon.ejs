@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %>の情報</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+    <div id="coupon">
+    <h1><%= title %>の情報</h1>
+    <h2 style="font-size: 25px;">クーポンの基本情報</h2>
+    <h3 style="font-size: 20px;">クーポン名：</h3>
+    <p class="p"><%= title %></p>
+    <h3 style="font-size: 20px;">クーポンの効果：</h3>
+    <% if (coupon_data[0].effect !== null) { %> 
+    <p class="p"><%= coupon_data[0].effect%></p>
+    <% } else { %>
+        <p class="p">登録されたデータがありません。</p>
+            <p class="p">データを登録してください。</p>
+            <dl class="align">
+            <form action="/coupon/reg_effect" method="post">
+                <dt><label>効果：</label></dt>
+            <dd><input type="text" name="effect"/></dd>
+            <input type="hidden" name="coupon_name" value=<%= title %>>
+            <input type="submit" value="登録"/>
+            </form>
+        </dl>     
+        </div>
+        <% } %>
+    <br><br><h2 style="font-size: 25px;">利用可能店舗</h2>
+    <h3 style="font-size: 20px;">店舗一覧</h3>
+    <div id="sample2">
+    <table>
+    <thead>
+        <tr>
+          <th>店舗名</th>
+          <th>基本情報</th>
+          <th>住所</th>
+        </tr>
+      </thead>
+      <% if (store_data.length !== 0) { %>   
+      <tbody>
+        <% for (var i = 0; i < store_data.length; i++){ %>
+        <tr>
+          <td><%= store_data[i].store_name %></td>
+          <td><%= store_data[i].info %></td>
+          <td><%= store_data[i].adress %></td>
+        </tr>
+        <% } %>
+      </tbody>
+        <% } else { %>
+          <tbody>
+      <tr>
+        <td colspan="3">登録された店舗がありません。</td>
+    </tr>
+  </tbody>
+      <% } %>
+    </table>
+</div>
+<div class="sample3">
+        <h3 style="font-size: 20px;" >店舗情報の追加</h3>
+        <form action="/coupon/reg_stores" method="post">
+            <dl class="align">
+            <dt><label>店舗名：</label></dt>
+            <dd><input type="text" name="store_name"/></dd>
+            <dt><label>店舗情報：</label></dt>
+            <dd><input type="text" name="info"/></dd>
+            <dt><label>住所：</label></dt>
+            <dd><input type="text" name="adress"/></dd>
+            <input type="hidden" name="coupon_name" value=<%= title %>><br>
+            <input type="submit" style="font-size: 15px;position: relative; left: 280px; top: 0px;" value="登録"/>
+        </dl>
+            </form> 
+        </div>   
+        <input type="button" style="font-size: 15px;"onclick="location.href='./'" value="戻る"/>
+</body>
+</html>

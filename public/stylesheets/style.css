@@ -7,9 +7,149 @@ a {
   color: #00B7FF;
 }
 .sample{
+  width: 360px;
+  height: 150px;	
+  top:20px;
+  right:200px;
+  font-size:20px;
+  position: absolute;
+}
+
+.sample2{
   width: 150px;
   height: 150px;
-  position:fixed;	
-  top:80px;
-  right:350px;
+  top:40px;
+  right:120px;
+  font-size:20px;
+  position: absolute;
+}
+
+.sample3{
+  position: relative;
+  bottom: 0px;
+}
+
+#login{
+  width: 400px;
+  margin: 30px auto;
+  padding: 20px;
+  font-size:20px;
+  border: 1px solid #555;
+  background-color: White;
+}
+
+#but{
+  text-align: center;
+  font-size:20px;
+  color: green;
+}
+
+.submit{
+  text-align: center;
+  width: 90%;
+  padding:10px;
+  font-size:10px;
+  border-style: solid;
+  border-color: white;
+  }
+
+  .form-title{
+    text-align: center;
+    font-size:40px;
+    margin-top:10px;
+    border-bottom: 1px solid black;
+    }
+
+.user,.pass{
+    margin-bottom: 20px;
+    }
+
+    #login input[type="text"],
+    input[type="password"]{
+    width: 380px;
+    padding: 4px;
+    height:20px;
+    font-size: 14px;
+      }
+
+button.link-style-btn{
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: #0033cc;
+}
+button.link-style-btn:hover{
+  text-decoration: underline;
+  color: #002080;
+}
+
+#sample1 table{
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  font-size: 20px;
+}
+
+#sample1 table tr{
+  border-bottom: solid 1px #eee;
+  cursor: pointer;
+}
+
+#sample1 table tr:hover{
+  background-color: #d4f0fd;
+}
+
+#sample1 table th,#sample1 table td{
+  text-align: center;
+  width: 25%;
+  padding: 15px 0;
+}
+
+dl.align dt{
+  width: 10em;
+  padding:10px 0px 0px 80px;
+  text-align: justify;
+  float:left;
+  clear: left;
+  position: static;
+  font-size: 20px;
+}
+
+dl.align dd{
+  width: 300px;
+  padding:10px 0px 0px 0px;
+  margin-left: 10em;
+  font-size: 20px;
+}
+
+#sample2 table{
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 80%;
+  font-size: 15px;
+}
+
+#sample2 table th{
+  background-color: #a9e0fa;
+}
+
+#sample2 table tr{
+  border-bottom: solid 1px rgb(4, 5, 4);
+  cursor: pointer;
+}
+
+#sample2 table tr:hover{
+  background-color: #38b9f5;
+}
+
+#sample2 table th,#sample2 table td{
+  text-align: center;
+  width: 25%;
+  padding: 15px 0;
+}
+
+#coupon .p{
+  font-size: 20px;
+  left: 50px; 
+  margin-left: 40px;
 }

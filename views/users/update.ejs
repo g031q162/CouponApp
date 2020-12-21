@@ -3,22 +3,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>登録内容変更</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 <body>
-    <h1>登録内容変更</h1>
+    <div id="login">
+        <p class="form-title">登録内容変更</p>
     <form action="" method="post">
-        <div>
             <label>ユーザー名：</label>
-            <input type="text" name="username"/>
-        </div>
-        <div>
+            <p class="user"><input type="text" name="username"/></p>
             <label>新しいパスワード：</label>
-            <input type="password" name="password"/>
+            <p class="pass"><input type="password" name="password"/></p>
+            <label>確認用パスワード：</label>
+            <p class="pass"><input type="password" name="password2"/></p>
+            <input type="button" style="font-size: 15px;"onclick="location.href='/'" value="戻る"/>
+            <p class="submit"><input type="submit" style="font-size: 20px;" value="変更"/></p>
         </div>
-        <div>
-            <input type="submit" value="変更"/>
-        </div>
-        <div><%= error %></div>
     </form>
 </body>
 </html>
